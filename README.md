@@ -1,1 +1,1 @@
-# winkAutoLights
+# smartAutoLights
