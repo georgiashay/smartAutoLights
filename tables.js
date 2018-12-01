@@ -35,6 +35,7 @@ const sequelize = new Sequelize('smartlights', mysqlAuth.user, mysqlAuth.passwor
 const Light = sequelize.define("light", {
   object_id: {type: Sequelize.STRING, primaryKey: true},
   object_type: Sequelize.STRING,
+  name: Sequelize.STRING,
   state: Sequelize.BOOLEAN
 });
 

@@ -8,11 +8,17 @@ var options = {
   }
 }
 
-request(options, function(error, response, body) {
-  if (!error && response.statusCode == 200) {
-    var info = JSON.parse(body);
-    console.log(info);
-  } else {
-    console.log(error);
-  }
-});
+async function requestStates() {
+  return new Promise(function(resolve, reject) {
+    request(options, function(error, response, body) {
+      if (!error && response.statusCode == 200) {
+        var info = JSON.parse(body);
+        resolve(info);
+      } else {
+        reject(error);
+      }
+    });
+  });
+}
+
+module.exports = {requestStates: requestStates};
